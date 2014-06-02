@@ -48,7 +48,7 @@ module TypeCast
                   method_missing(:#{attribute})
                 end
                 self.#{attribute}_before_type_cast = uncasted
-                if uncasted.kind_of?(String) && uncasted.respond_to?(:#{conversion_method})
+                if uncasted.respond_to?(:#{conversion_method})
                   uncasted.__send__(:#{conversion_method})
                 else
                   uncasted

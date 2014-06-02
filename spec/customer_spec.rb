@@ -33,4 +33,8 @@ describe Customer do
     expect(subject.created_at_before_type_cast).to eq "2014-05-26T19:31:04+03:00"
     expect(subject.dynamic_created_at_before_type_cast).to eq "2014-05-27T13:19:25+03:00"
   end
+
+  it "performs type casting of any value (not only String) if provided method name for type cast" do
+    expect(subject.suggestions_count).to eq 0
+  end
 end

@@ -1,4 +1,4 @@
-# Typecast
+# TypeCast
 
 Type casting of attributes defined in superclass or realized through method_missing. Works only for string attributes.
 

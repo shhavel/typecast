@@ -19,6 +19,10 @@ class User
     "26 September 2014 at 19:50:38 EEST"
   end
 
+  def suggestions_count
+    nil
+  end
+
   def method_missing(method_name, *args, &block)
     return super unless "dynamic_created_at" == method_name.to_s
     "2014-05-27T13:19:25+03:00"
