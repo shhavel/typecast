@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Alex Avoyants"]
   spec.email         = ["shhavel@gmail.com"]
   spec.summary       = %q{Type casting of attributes defined in superclass or realized through method_missing.}
-  spec.description   = %q{Type casting of attributes defined in superclass or realized through method_missing. Works only for string attributes.}
+  spec.description   = %q{ype casting of attributes defined in superclass or realized through method_missing. Converts string attributes with parser object (object that respond_to? :parse) or attribute of any type with type-casting method (e.g. :to_i, :to_f).}
   spec.homepage      = ""
   spec.license       = "MIT"
 
