@@ -1,8 +1,9 @@
 require "type_cast/version"
-require "active_support"
 
 module TypeCast
-  extend ::ActiveSupport::Concern
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
 
   module ClassMethods
     def type_cast(*args)
@@ -69,4 +70,13 @@ module TypeCast
     end
     alias_method :typecast, :type_cast
   end
+end
+
+begin
+  require 'active_resource'
+  class ActiveResource::Base
+    include TypeCast
+    type_cast :created_at, :updated_at, Time
+  end
+rescue LoadError
 end
